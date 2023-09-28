@@ -1,29 +1,22 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import TinTuc from "./pages/TinTuc";
 import DanhMuc from "./pages/DanhMuc";
+import ChiTiet from "./pages/ChiTiet";
+import LienHe from "./pages/LienHe";
 
 const App = () => {
 
     return (
         <>
             <Router>
-                <ul>
-                    <li>
-                        <Link to="/home">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/tintuc">Tin Tức</Link>
-                    </li>
-                    <li>
-                        <Link to="/danhmuc">Danh Mục</Link>
-                    </li>
-                </ul>
                 <Routes>
-                    <Route path='/home' element={<Home />} />
+                    <Route path='/' element={<Home />} />
                     <Route path='/tintuc' element={<TinTuc />} />
-                    <Route path='/danhmuc' element={<DanhMuc />} />
+                    <Route path='/danhmuc/:cId' element={<DanhMuc />} />
+                    <Route path='/chitiet/:dId' element={<ChiTiet />} />
+                    <Route path='/lienhe' element={<LienHe />} />
                 </Routes>
             </Router>
         </>
