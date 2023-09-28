@@ -4,11 +4,11 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
 import Sidebar from '../components/Sidebar';
-import Side from '../components/Side';
+import Data from '../components/Data';
 
 const ChiTiet = () => {
     let { dId } = useParams();
-    var newsById = Side.listNews.find(news => news.id == dId);
+    var newsById = Data.listNews.find(news => news.id == dId);
 
     return (
         <div className="wrapper">

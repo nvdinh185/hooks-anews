@@ -5,12 +5,12 @@ import Header from '../components/Header';
 import Menu from '../components/Menu';
 import PostItem from '../components/PostItem';
 import Sidebar from '../components/Sidebar';
-import Side from '../components/Side';
+import Data from '../components/Data';
 
 const DanhMuc = () => {
     let { cId } = useParams();
-    var listNewsByCat = Side.listNews.filter(news => news.catId == cId);
-    var catName = Side.listCats.find(cat => cat.id == cId).name;
+    var listNewsByCat = Data.listNews.filter(news => news.catId == cId);
+    var catName = Data.listCats.find(cat => cat.id == cId).name;
 
     return (
         <div className="wrapper">

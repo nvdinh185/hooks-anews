@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function PostItem(props) {
     return (
         <li>
             <h2>
-                <a href={"/chitiet/" + props.id} title="">{props.description}</a>
+                <Link to={"/chitiet/" + props.id}>{props.description}</Link>
             </h2>
             <div className="item">
                 <p>{props.detail}</p>

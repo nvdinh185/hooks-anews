@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 function Menu() {
     return (
         <div id="menu">
             <ul>
-                <li><a href="/" title="">Trang chủ</a></li>
-                <li className="active"><a href="/tintuc" title="">Tin tức</a></li>
-                <li><a href="/lienhe" title="">Liên hệ</a></li>
+                <li><Link to="/">Trang chủ</Link></li>
+                <li className="active"><Link to="/tintuc">Tin tức</Link></li>
+                <li><Link to="/lienhe">Liên hệ</Link></li>
             </ul>
             <div className="clr"></div>
         </div>

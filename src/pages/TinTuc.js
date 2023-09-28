@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Menu from '../components/Menu';
 import PostItem from '../components/PostItem';
 import Sidebar from '../components/Sidebar';
-import Side from '../components/Side';
+import Data from '../components/Data';
 
 const App = () => {
 
@@ -21,7 +21,7 @@ const App = () => {
                         <h3>Tin tức</h3>
                         <div className="main-content items-new">
                             <ul>
-                                {Side.listNews.map(news =>
+                                {Data.listNews.map(news =>
                                     <PostItem
                                         key={news.id}
                                         id={news.id}
