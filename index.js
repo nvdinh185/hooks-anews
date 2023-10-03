@@ -5,7 +5,7 @@ var cors = require('cors');
 app.use(cors());
 const route = require('./routes');
 
-app.use(express.static(__dirname + "/client"));
+app.use(express.static(__dirname + "/build"));
 
 // Router init
 route(app);
