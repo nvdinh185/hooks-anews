@@ -10,16 +10,14 @@ import Sidebar from '../components/Sidebar';
 const ChiTiet = () => {
     let { dId } = useParams();
 
-    const [listNews, setListNews] = useState([]);
-    var newsById = {};
+    const [newsById, setNewsById] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            var result = await axios('http://localhost:3001/anews');
-            setListNews(result.data);
+            var result = await axios(`http://localhost:3001/anews/${dId}`);
+            setNewsById(result.data);
         }
         fetchData();
     }, []);
-    newsById = listNews.find(news => news.id == dId);
 
     return (
         <div className="wrapper">
@@ -31,9 +29,9 @@ const ChiTiet = () => {
                     <Sidebar />
                 </div>
                 <div className="content-right fr">
-                    <h3>{newsById?.description}</h3>
+                    <h3>{newsById.description}</h3>
                     <div className="main-content">
-                        <p>{newsById?.detail}</p>
+                        <p>{newsById.detail}</p>
                     </div>
                 </div>
                 <div className="clr"></div>
