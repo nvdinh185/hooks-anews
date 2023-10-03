@@ -7,7 +7,7 @@ function Sidebar() {
     const [listCats, setListCats] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            let result = await axios('http://localhost:3001/acategories');
+            let result = await axios('http://localhost:3001/cat');
             setListCats(result.data);
         }
         fetchData();

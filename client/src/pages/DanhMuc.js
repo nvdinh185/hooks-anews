@@ -11,19 +11,17 @@ import Sidebar from '../components/Sidebar';
 const DanhMuc = () => {
     let { cId } = useParams();
 
-    const [listNews, setListNews] = useState([]);
-    const [listCats, setListCats] = useState([]);
+    const [listNewsByCat, setListNewsByCat] = useState([]);
+    const [catById, setCatById] = useState({});
     useEffect(() => {
         async function fetchData() {
-            var news = await axios('http://localhost:3001/anews');
-            setListNews(news.data);
-            let cats = await axios('http://localhost:3001/acategories');
-            setListCats(cats.data);
+            var news = await axios(`http://localhost:3001/news/newsbycat?cid=${cId}`);
+            setListNewsByCat(news.data);
+            let cat = await axios(`http://localhost:3001/cat/catbyid?id=${cId}`);
+            setCatById(cat.data);
         }
         fetchData();
-    }, []);
-    var listNewsByCat = listNews.filter(news => news.catId == cId);
-    var catName = listCats.find(cat => cat.id == cId)?.name;
+    }, [cId]);
 
     return (
         <div className="wrapper">
@@ -35,7 +33,7 @@ const DanhMuc = () => {
                     <Sidebar />
                 </div>
                 <div className="content-right fr">
-                    <h3>Tin tức :: {catName}</h3>
+                    <h3>Tin tức :: {catById.name}</h3>
                     <div className="main-content items-new">
                         <ul>
                             {listNewsByCat.map(news =>

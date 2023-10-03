@@ -12,7 +12,7 @@ const App = () => {
     const [listNews, setListNews] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            var result = await axios('http://localhost:3001/anews');
+            var result = await axios('http://localhost:3001/news');
             setListNews(result.data);
         }
         fetchData();

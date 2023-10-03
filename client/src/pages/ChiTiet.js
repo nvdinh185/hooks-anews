@@ -13,7 +13,7 @@ const ChiTiet = () => {
     const [newsById, setNewsById] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            var result = await axios(`http://localhost:3001/anews/${dId}`);
+            var result = await axios(`http://localhost:3001/news/newsbyid?id=${dId}`);
             setNewsById(result.data);
         }
         fetchData();
