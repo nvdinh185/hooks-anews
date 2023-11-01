@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import TinTuc from "./pages/TinTuc";
@@ -10,15 +10,13 @@ const App = () => {
 
     return (
         <>
-            <Router>
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/tintuc' element={<TinTuc />} />
-                    <Route path='/danhmuc/:cId' element={<DanhMuc />} />
-                    <Route path='/chitiet/:dId' element={<ChiTiet />} />
-                    <Route path='/lienhe' element={<LienHe />} />
-                </Routes>
-            </Router>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/tintuc' element={<TinTuc />} />
+                <Route path='/danhmuc/:cId' element={<DanhMuc />} />
+                <Route path='/chitiet/:dId' element={<ChiTiet />} />
+                <Route path='/lienhe' element={<LienHe />} />
+            </Routes>
         </>
     )
 }
