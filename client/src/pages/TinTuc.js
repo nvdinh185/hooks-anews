@@ -7,7 +7,7 @@ import Menu from '../components/Menu';
 import PostItem from '../components/PostItem';
 import Sidebar from '../components/Sidebar';
 
-const App = () => {
+const TinTuc = () => {
 
     const [listNews, setListNews] = useState([]);
     useEffect(() => {
@@ -52,4 +52,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default TinTuc;
