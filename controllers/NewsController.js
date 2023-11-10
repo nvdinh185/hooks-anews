@@ -67,6 +67,31 @@ class NewsController {
             conn.end();
         }
     }
+
+    // [POST] /news/contact
+    async postContact(req, res) {
+        const { name, phone, web, gender, content, file } = req.form_data;
+
+        try {
+            var conn = mysql.createConnection(configDB);
+
+            await new Promise((resolve, reject) => {
+                conn.query(`INSERT INTO contact (name, phone, web, gender, picture, content) VALUES (?, ?, ?, ?, ?, ?)`,
+                    [name, phone, web, gender, file, content], function (err, result) {
+                        if (err) {
+                            reject(err);
+                        }
+                        resolve(result);
+                    });
+            })
+            res.status(200).send('OK');
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('NOK');
+        } finally {
+            conn.end();
+        }
+    }
 }
 
 module.exports = new NewsController();
