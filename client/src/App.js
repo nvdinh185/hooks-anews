@@ -9,15 +9,13 @@ import LienHe from "./pages/LienHe";
 const App = () => {
 
     return (
-        <>
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/tintuc' element={<TinTuc />} />
-                <Route path='/danhmuc/:cId' element={<DanhMuc />} />
-                <Route path='/chitiet/:dId' element={<ChiTiet />} />
-                <Route path='/lienhe' element={<LienHe />} />
-            </Routes>
-        </>
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/tintuc' element={<TinTuc />} />
+            <Route path='/danhmuc/:cId' element={<DanhMuc />} />
+            <Route path='/chitiet/:dId' element={<ChiTiet />} />
+            <Route path='/lienhe' element={<LienHe />} />
+        </Routes>
     )
 }
 
