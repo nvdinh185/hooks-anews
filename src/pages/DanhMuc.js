@@ -9,8 +9,8 @@ import Data from '../components/Data';
 
 const DanhMuc = () => {
     let { cId } = useParams();
-    var listNewsByCat = Data.listNews.filter(news => news.catId == cId);
-    var catName = Data.listCats.find(cat => cat.id == cId).name;
+    var listNewsByCat = Data.listNews.filter(news => news.catId === cId);
+    var catName = Data.listCats.find(cat => cat.id === cId).name;
 
     return (
         <div className="wrapper">

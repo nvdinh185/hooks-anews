@@ -50,7 +50,9 @@ const listCats = [
     }
 ]
 
-export default {
+const Data = {
     listNews: listNews,
     listCats: listCats
 }
+
+export default Data;

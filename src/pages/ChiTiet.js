@@ -8,7 +8,7 @@ import Data from '../components/Data';
 
 const ChiTiet = () => {
     let { dId } = useParams();
-    var newsById = Data.listNews.find(news => news.id == dId);
+    var newsById = Data.listNews.find(news => news.id === dId);
 
     return (
         <div className="wrapper">
